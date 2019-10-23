@@ -5,7 +5,7 @@ services:
     restart: always
     image: forum-db
     build:
-      context: ./db
+      context: ./backend/db
     volumes:
       - db:/var/lib/postgresql/data
     env_file:
@@ -20,7 +20,7 @@ services:
     restart: always
     image: forum-graphql
     build:
-      context: ./graphql
+      context: ./backend/graphql
     env_file:
       - ./.env
     depends_on:
